@@ -1,3 +1,4 @@
+import 'package:apis/services/models/album.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:apis/ui/common/app_colors.dart';
@@ -8,12 +9,13 @@ import 'home_viewmodel.dart';
 class HomeView extends StackedView<HomeViewModel> {
   const HomeView({Key? key}) : super(key: key);
 
+
   @override
   Widget builder(
     BuildContext context,
     HomeViewModel viewModel,
     Widget? child,
-  ) {
+  ) {  
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -26,21 +28,35 @@ class HomeView extends StackedView<HomeViewModel> {
                 verticalSpaceLarge,
                 Column(
                   children: [
-                    const Text(
-                      'Hello, STACKED!',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
+                   viewModel.isBusy
+                ? const Center(child: CircularProgressIndicator())
+                :  Text(
+        viewModel.album!.title.toString(),
+        style: const TextStyle(
+          fontSize: 35,
+          fontWeight: FontWeight.w900,
+        ),),     
                     verticalSpaceMedium,
-                    MaterialButton(
-                      color: Colors.black,
-                      onPressed: viewModel.incrementCounter,
-                      child: Text(
-                        viewModel.counterLabel,
-                        style: const TextStyle(color: Colors.white),
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MaterialButton(
+                          color: Colors.black,
+                          onPressed: viewModel.incrementCounter,
+                        ),
+                        Text(
+                          viewModel.counterLabel,
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        MaterialButton(
+                          color: Colors.black,
+                          onPressed: viewModel.decrementCounter,
+                          child: Text(
+                            viewModel.counterLabel,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -82,4 +98,11 @@ class HomeView extends StackedView<HomeViewModel> {
     BuildContext context,
   ) =>
       HomeViewModel();
+
+      @override
+  void onViewModelReady(HomeViewModel viewModel) {
+    // TODO: implement onViewModelReady
+    super.onViewModelReady(viewModel);
+    viewModel.init();
+  }
 }

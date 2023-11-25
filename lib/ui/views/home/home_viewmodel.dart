@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:apis/app/app.bottomsheets.dart';
 import 'package:apis/app/app.dialogs.dart';
 import 'package:apis/app/app.locator.dart';
+import 'package:apis/services/album_data_service.dart';
+import 'package:apis/services/models/album.dart';
 import 'package:apis/ui/common/app_strings.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -8,6 +12,30 @@ import 'package:stacked_services/stacked_services.dart';
 class HomeViewModel extends BaseViewModel {
   final _dialogService = locator<DialogService>();
   final _bottomSheetService = locator<BottomSheetService>();
+  final _albumService = locator<AlbumDataService>();
+
+  //    late Future<Album> futureAlbum = _albumService.fetchAlbum();
+
+  // void fetchAlbum() async {
+  //   try {
+  //     futureAlbum = _albumService.fetchAlbum();
+  //   } catch (e) {
+  //     log(e.toString());
+  //   }
+  // }
+     Album? album;
+
+ 
+
+ 
+ init() async {
+    try {
+      album = await _albumService.fetchAlbum();
+      notifyListeners(); // Notify listeners to trigger a UI update
+    } catch (e) {
+      log(e.toString());
+    }
+  }
 
   String get counterLabel => 'Counter is: $_counter';
 
@@ -15,6 +43,16 @@ class HomeViewModel extends BaseViewModel {
 
   void incrementCounter() {
     _counter++;
+    rebuildUi();
+  }
+
+  void decrementCounter() {
+    if (_counter == 0) {
+      _counter = 0;
+    } else {
+      _counter--;
+    }
+
     rebuildUi();
   }
 
