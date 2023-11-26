@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:apis/app/app.bottomsheets.dart';
 import 'package:apis/app/app.dialogs.dart';
 import 'package:apis/app/app.locator.dart';
+import 'package:apis/app/app.router.dart';
 import 'package:apis/services/album_data_service.dart';
 import 'package:apis/services/models/album.dart';
 import 'package:apis/ui/common/app_strings.dart';
@@ -10,6 +11,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class HomeViewModel extends BaseViewModel {
+  final _navigationService =locator<NavigationService>();
   final _dialogService = locator<DialogService>();
   final _bottomSheetService = locator<BottomSheetService>();
   final _albumService = locator<AlbumDataService>();
@@ -23,18 +25,17 @@ class HomeViewModel extends BaseViewModel {
   //     log(e.toString());
   //   }
   // }
-     Album? album;
+  Album? album;
 
- 
-
- 
- init() async {
+  init() async {
+    setBusy(true);
     try {
       album = await _albumService.fetchAlbum();
       notifyListeners(); // Notify listeners to trigger a UI update
     } catch (e) {
       log(e.toString());
     }
+    setBusy(false);
   }
 
   String get counterLabel => 'Counter is: $_counter';
@@ -70,5 +71,9 @@ class HomeViewModel extends BaseViewModel {
       title: ksHomeBottomSheetTitle,
       description: ksHomeBottomSheetDescription,
     );
+  }
+
+  moveToPostApi(){
+    _navigationService.navigateToPostApiView();
   }
 }

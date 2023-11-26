@@ -12,13 +12,13 @@ import 'package:http/http.dart' as http;
 //       .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
 
 //   if (response.statusCode == 200) {
-    
+
 //     Album album= Album.fromJson(jsonDecode(response.body));
 //     log(response.body);
 //     return album;
-    
+
 //   } else {
-   
+
 //     throw Exception('Failed to load album');
 //   }
 //     }catch(e){
@@ -28,7 +28,7 @@ import 'package:http/http.dart' as http;
 
 // }
 class AlbumDataService {
-   fetchAlbum() async {
+  fetchAlbum() async {
     try {
       final response = await http
           .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));

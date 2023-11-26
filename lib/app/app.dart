@@ -7,6 +7,8 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:apis/ui/views/auth/log_in/log_in_view.dart';
 import 'package:apis/ui/views/auth/sign_up/sign_up_view.dart';
 import 'package:apis/services/album_data_service.dart';
+import 'package:apis/ui/views/post_apihit/post_api/post_api_view.dart';
+import 'package:apis/ui/views/post_apihit/apiget_data/apiget_data_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -15,6 +17,8 @@ import 'package:apis/services/album_data_service.dart';
     MaterialRoute(page: StartupView),
     MaterialRoute(page: LogInView),
     MaterialRoute(page: SignUpView),
+    MaterialRoute(page: PostApiView),
+    MaterialRoute(page: ApigetDataView),
 // @stacked-route
   ],
   dependencies: [

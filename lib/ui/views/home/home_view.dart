@@ -1,4 +1,4 @@
-import 'package:apis/services/models/album.dart';
+import 'package:apis/ui/views/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:apis/ui/common/app_colors.dart';
@@ -9,13 +9,12 @@ import 'home_viewmodel.dart';
 class HomeView extends StackedView<HomeViewModel> {
   const HomeView({Key? key}) : super(key: key);
 
-
   @override
   Widget builder(
     BuildContext context,
     HomeViewModel viewModel,
     Widget? child,
-  ) {  
+  ) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -28,14 +27,15 @@ class HomeView extends StackedView<HomeViewModel> {
                 verticalSpaceLarge,
                 Column(
                   children: [
-                   viewModel.isBusy
-                ? const Center(child: CircularProgressIndicator())
-                :  Text(
-        viewModel.album!.title.toString(),
-        style: const TextStyle(
-          fontSize: 35,
-          fontWeight: FontWeight.w900,
-        ),),     
+                    viewModel.isBusy
+                        ? const Center(child: CircularProgressIndicator())
+                        : Text(
+                            viewModel.album!.title.toString(),
+                            style: const TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
                     verticalSpaceMedium,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +46,7 @@ class HomeView extends StackedView<HomeViewModel> {
                         ),
                         Text(
                           viewModel.counterLabel,
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.black),
                         ),
                         MaterialButton(
                           color: Colors.black,
@@ -60,6 +60,7 @@ class HomeView extends StackedView<HomeViewModel> {
                     ),
                   ],
                 ),
+                CustomTextButton(buttonColor: Colors.black, text:" move",onPress: viewModel.moveToPostApi),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -99,7 +100,7 @@ class HomeView extends StackedView<HomeViewModel> {
   ) =>
       HomeViewModel();
 
-      @override
+  @override
   void onViewModelReady(HomeViewModel viewModel) {
     // TODO: implement onViewModelReady
     super.onViewModelReady(viewModel);
