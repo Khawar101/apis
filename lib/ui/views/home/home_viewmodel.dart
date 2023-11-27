@@ -11,7 +11,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class HomeViewModel extends BaseViewModel {
-  final _navigationService =locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
   final _dialogService = locator<DialogService>();
   final _bottomSheetService = locator<BottomSheetService>();
   final _albumService = locator<AlbumDataService>();
@@ -73,7 +73,7 @@ class HomeViewModel extends BaseViewModel {
     );
   }
 
-  moveToPostApi(){
+  moveToPostApi() {
     _navigationService.navigateToPostApiView();
   }
 }

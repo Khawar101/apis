@@ -7,6 +7,8 @@ import 'dart:async' as _i5;
 import 'dart:ui' as _i6;
 
 import 'package:apis/services/album_data_service.dart' as _i7;
+import 'package:apis/services/list_view_service.dart' as _i8;
+import 'package:apis/services/models/data_in_list.dart' as _i9;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
@@ -672,3 +674,17 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockAlbumDataService extends _i1.Mock implements _i7.AlbumDataService {}
+
+/// A class which mocks [ListViewService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockListViewService extends _i1.Mock implements _i8.ListViewService {
+  @override
+  set dataInList(List<_i9.DataInList>? _dataInList) => super.noSuchMethod(
+        Invocation.setter(
+          #dataInList,
+          _dataInList,
+        ),
+        returnValueForMissingStub: null,
+      );
+}

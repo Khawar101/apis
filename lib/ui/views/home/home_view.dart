@@ -60,7 +60,10 @@ class HomeView extends StackedView<HomeViewModel> {
                     ),
                   ],
                 ),
-                CustomTextButton(buttonColor: Colors.black, text:" move",onPress: viewModel.moveToPostApi),
+                CustomTextButton(
+                    buttonColor: Colors.black,
+                    text: " move",
+                    onPress: viewModel.moveToPostApi),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

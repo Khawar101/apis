@@ -25,11 +25,14 @@ class PostApiView extends StackedView<PostApiViewModel> {
             CustomTextFormField(
               hintText: 'enter title',
               controller: viewModel.titleCtrl,
-
             ),
             verticalSpaceLarge,
-            CustomTextButton(buttonColor: Colors.red, text: "enter next screen",onPress: viewModel.moveToApiDataScreen)
-
+            CustomTextButton(
+                buttonColor: Colors.red,
+                text: "enter next screen",
+                onPress: () {
+                  viewModel.dataPostApi();
+                })
           ],
         ),
       ),
