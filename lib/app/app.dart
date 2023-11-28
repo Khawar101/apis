@@ -12,6 +12,8 @@ import 'package:apis/ui/views/post_apihit/apiget_data/apiget_data_view.dart';
 import 'package:apis/ui/views/list_view_data.dart/list_view_data/list_view_data_view.dart';
 import 'package:apis/ui/views/list_view_data.dart/show_list/show_list_view.dart';
 import 'package:apis/services/list_view_service.dart';
+import 'package:apis/ui/views/update_data/update_data_view.dart';
+import 'package:apis/services/update_api_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -24,6 +26,7 @@ import 'package:apis/services/list_view_service.dart';
     MaterialRoute(page: ApigetDataView),
     MaterialRoute(page: ListViewDataView),
     MaterialRoute(page: ShowListView),
+    MaterialRoute(page: UpdateDataView),
 // @stacked-route
   ],
   dependencies: [
@@ -32,6 +35,7 @@ import 'package:apis/services/list_view_service.dart';
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: AlbumDataService),
     LazySingleton(classType: ListViewService),
+    LazySingleton(classType: UpdateApiService),
 // @stacked-service
   ],
   bottomsheets: [

@@ -24,7 +24,7 @@ class CustomTextButton extends StatelessWidget {
       },
       child: Container(
         height: height ?? 50,
-        width: width ?? 300,
+        width: width ?? double.infinity,
         decoration: BoxDecoration(
           color: buttonColor,
           borderRadius: BorderRadius.circular(7),

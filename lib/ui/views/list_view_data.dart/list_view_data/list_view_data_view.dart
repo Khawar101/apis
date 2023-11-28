@@ -5,7 +5,6 @@ import 'package:stacked/stacked.dart';
 import 'list_view_data_viewmodel.dart';
 
 class ListViewDataView extends StackedView<ListViewDataViewModel> {
-  
   const ListViewDataView({Key? key}) : super(key: key);
 
   @override
@@ -22,7 +21,8 @@ class ListViewDataView extends StackedView<ListViewDataViewModel> {
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
                   onTap: () {
-                    viewModel.moveToShowListScreen( viewModel.dataInList![index]);
+                    viewModel
+                        .moveToShowListScreen(viewModel.dataInList![index]);
                   },
                   leading: const Icon(Icons.list),
                   trailing: Text(

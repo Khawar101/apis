@@ -10,6 +10,7 @@ class ListViewService {
     try {
       var response = await http
           .get(Uri.parse("https://jsonplaceholder.typicode.com/users"));
+
       if (response.statusCode == 200) {
         List<dynamic> dataInList = jsonDecode(response.body);
         dataInList = dataInList.map((e) => DataInList.fromJson(e)).toList();
