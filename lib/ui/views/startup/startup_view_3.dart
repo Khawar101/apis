@@ -33,7 +33,7 @@ class StartupView3 extends ViewModelWidget<StartupViewModel> {
             ),
             verticalSpace(20),
             const Text(
-              "Find Your Favorite Food",
+              "Find Your Favorite Food 3",
               style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             verticalSpace(20),
