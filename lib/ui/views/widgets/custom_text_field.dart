@@ -151,7 +151,7 @@ class CustomTextFormField extends StatelessWidget {
 
   _setFontStyle() {
     return const TextStyle(
-      color: Colors.black,
+      color: Colors.black45,
       fontSize: 14,
       fontFamily: 'Roboto',
     );
@@ -169,7 +169,7 @@ class CustomTextFormField extends StatelessWidget {
       borderRadius: BorderRadius.circular(
         10.00,
       ),
-      borderSide: const BorderSide(color: kcPrimaryColor, width: 1.0 / 2),
+      borderSide: const BorderSide(color: Colors.white, width: 1.0 / 2),
     );
   }
 }
