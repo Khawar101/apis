@@ -67,8 +67,11 @@ class StartupView3 extends ViewModelWidget<StartupViewModel> {
                     ],
                   ),
                   CustomTextButton(
-                      buttonColor: Colors.red, text: "Next", width: 100,
-                      onPress: viewModel.next,)
+                    buttonColor: Colors.red,
+                    text: "Next",
+                    width: 100,
+                    onPress: viewModel.next,
+                  )
                 ],
               ),
             )

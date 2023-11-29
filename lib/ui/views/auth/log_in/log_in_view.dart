@@ -59,12 +59,12 @@ class LogInView extends StackedView<LogInViewModel> {
                         color: Colors.black,
                         fontWeight: FontWeight.w500),
                   ),
-                Icon(Icons.map_outlined,)
+                  Icon(
+                    Icons.map_outlined,
+                  )
                 ],
               ),
               verticalSpaceSmall,
-              111
-
             ],
           ),
         ));

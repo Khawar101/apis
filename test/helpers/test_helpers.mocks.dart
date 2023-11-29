@@ -9,6 +9,7 @@ import 'dart:ui' as _i6;
 import 'package:apis/services/album_data_service.dart' as _i7;
 import 'package:apis/services/list_view_service.dart' as _i8;
 import 'package:apis/services/models/data_in_list.dart' as _i9;
+import 'package:apis/services/new_task_service.dart' as _i11;
 import 'package:apis/services/update_api_service.dart' as _i10;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
@@ -694,3 +695,8 @@ class MockListViewService extends _i1.Mock implements _i8.ListViewService {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockUpdateApiService extends _i1.Mock implements _i10.UpdateApiService {}
+
+/// A class which mocks [NewTaskService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockNewTaskService extends _i1.Mock implements _i11.NewTaskService {}

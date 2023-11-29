@@ -29,7 +29,8 @@ class UpdateApiService {
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
           },
-          body: jsonEncode(<String, dynamic>{"title": title, "userid": userid}));
+          body:
+              jsonEncode(<String, dynamic>{"title": title, "userid": userid}));
       if (response.statusCode == 200) {
         UpdateProfile updateProfile =
             UpdateProfile.fromJson(jsonDecode(response.body.toString()));

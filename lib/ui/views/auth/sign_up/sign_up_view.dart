@@ -20,62 +20,59 @@ class SignUpView extends StackedView<SignUpViewModel> {
   ) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white70,
+        backgroundColor: Colors.white70,
         body: SafeArea(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Enter Your Signup Detail",
-                style: TextStyle(fontSize: 16, color: Colors.black),
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Enter Your Signup Detail",
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                  verticalSpaceSmall,
+                  const Text(
+                    "Lorem ipsum dolai sit amer.conset tetuer\n smple mistadishbbeh efd, sed",
+                    style: TextStyle(fontSize: 16, color: Colors.black38),
+                    textAlign: TextAlign.start,
+                  ),
+                  verticalSpaceSmall,
+                  Center(
+                    child: SvgPicture.asset(
+                      "assets/icons/profile-placeholder.svg",
+                      height: 52,
+                    ),
+                  ),
+                  verticalSpaceSmall,
+                  CustomTextFormField(
+                    hintText: "Enter your name",
+                  ),
+                  verticalSpaceSmall,
+                  CustomTextFormField(
+                    hintText: "Email Address",
+                  ),
+                  verticalSpaceSmall,
+                  CustomTextFormField(
+                    hintText: "phone No",
+                  ),
+                  verticalSpaceSmall,
+                  CustomTextFormField(
+                    hintText: "password",
+                  ),
+                  verticalSpaceSmall,
+                  CustomTextFormField(
+                    hintText: "Enter confirm password",
+                  ),
+                  verticalSpaceMedium,
+                  CustomTextButton(buttonColor: Colors.red, text: "Signup")
+                ],
               ),
-              verticalSpaceSmall,
-              const Text(
-                "Lorem ipsum dolai sit amer.conset tetuer\n smple mistadishbbeh efd, sed",
-                style: TextStyle(fontSize: 16, color: Colors.black38),
-                textAlign: TextAlign.start,
-              ),
-              verticalSpaceSmall,
-              Center(
-                child: SvgPicture.asset(
-                  "assets/icons/profile-placeholder.svg",
-                  height: 52,
-                ),
-              ),
-
-              verticalSpaceSmall,
-              CustomTextFormField(
-                hintText: "Enter your name",
-              ),
-              verticalSpaceSmall,
-              CustomTextFormField(
-                hintText: "Email Address",
-              ),
-              verticalSpaceSmall,
-              CustomTextFormField(
-                hintText: "phone No",
-              ),
-              verticalSpaceSmall,
-              CustomTextFormField(
-                hintText: "password",
-              ),
-
-              verticalSpaceSmall,
-              CustomTextFormField(
-                hintText: "Enter confirm password",
-              ),
-              verticalSpaceMedium,
-              CustomTextButton(buttonColor: Colors.red, text:"Signup")
-
-            ],
+            ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 
   @override
@@ -85,18 +82,14 @@ class SignUpView extends StackedView<SignUpViewModel> {
       SignUpViewModel();
 }
 
-
-
-
-
-  // verticalSpace(height * 0.1),
-  //           const LogoTextField(),
-  //           verticalSpace(20),
-  //           CustomTextButton(
-  //               buttonColor: kcPrimaryColor,
-  //               text: "SignUp",
-  //               onPress: () {
-  //                 // if (formKey.currentState!.validate()) {}
-  //               }),
-  //           verticalSpace(25),
-  //           const LogInBottom()
+// verticalSpace(height * 0.1),
+//           const LogoTextField(),
+//           verticalSpace(20),
+//           CustomTextButton(
+//               buttonColor: kcPrimaryColor,
+//               text: "SignUp",
+//               onPress: () {
+//                 // if (formKey.currentState!.validate()) {}
+//               }),
+//           verticalSpace(25),
+//           const LogInBottom()

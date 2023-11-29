@@ -14,6 +14,7 @@ import 'package:apis/ui/views/list_view_data.dart/show_list/show_list_view.dart'
 import 'package:apis/services/list_view_service.dart';
 import 'package:apis/ui/views/update_data/update_data_view.dart';
 import 'package:apis/services/update_api_service.dart';
+import 'package:apis/services/new_task_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -36,6 +37,7 @@ import 'package:apis/services/update_api_service.dart';
     LazySingleton(classType: AlbumDataService),
     LazySingleton(classType: ListViewService),
     LazySingleton(classType: UpdateApiService),
+    LazySingleton(classType: NewTaskService),
 // @stacked-service
   ],
   bottomsheets: [

@@ -47,7 +47,7 @@ class StartupViewModel extends BaseViewModel {
     const StartupView4(),
   ];
   next() {
-    if (pages.length >= pageInde+2) {
+    if (pages.length >= pageInde + 2) {
       pageInde++;
       notifyListeners();
     }
