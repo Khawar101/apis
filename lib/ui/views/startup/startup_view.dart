@@ -1,5 +1,9 @@
+import 'package:apis/ui/views/widgets/button.dart';
+import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_carousel_slider/carousel_slider.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:stacked/stacked.dart';
 import 'package:apis/ui/common/ui_helpers.dart';
 
@@ -14,30 +18,60 @@ class StartupView extends StackedView<StartupViewModel> {
     StartupViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
-      body: Center(
+    return  Scaffold(
+      body: SafeArea(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          
           children: [
-            Text(
-              'STACKED',
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+verticalSpace(20),
+            Image.asset("assets/icons/logo.png",width: 35),
+            verticalSpace(20),
+          Center(
+            child: SvgPicture.asset(
+              "assets/icons/A1-Main.svg",
+              height:  250,
+                 
             ),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('Loading ...', style: TextStyle(fontSize: 16)),
-                horizontalSpaceSmall,
-                SizedBox(
-                  width: 16,
-                  height: 16,
-                  child: CircularProgressIndicator(
-                    color: Colors.black,
-                    strokeWidth: 6,
+          ),
+         verticalSpace(20),
+         const Text("Find Your Favorite Food",style:TextStyle(fontSize: 16,color: Colors.black),),
+         verticalSpace(20),
+         const Text("Lorem ipsum dolai sit amer.conset tetuer\n smple mistadishbbeh efd, sed",style:TextStyle(fontSize: 16,color: Colors.black38),textAlign: TextAlign.center,),
+         verticalSpace(40),
+         Padding(
+           padding: const EdgeInsets.symmetric(horizontal: 20),
+           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Row(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.red,
+                    radius: 5,
+         
                   ),
-                )
-              ],
-            ),
+               
+              horizontalSpaceTiny,
+              CircleAvatar(
+                backgroundColor: Colors.black12,
+                radius: 5,
+                
+              ),
+              horizontalSpaceTiny,
+              CircleAvatar(
+                backgroundColor: Colors.black12,
+                radius: 5,
+                
+              ),
+ ],
+              ),
+              CustomTextButton(buttonColor: Colors.red, text: "Next",width: 100)
+            ],
+           ),
+         )
+         
+          
           ],
         ),
       ),
@@ -50,7 +84,7 @@ class StartupView extends StackedView<StartupViewModel> {
   ) =>
       StartupViewModel();
 
-  @override
-  void onViewModelReady(StartupViewModel viewModel) => SchedulerBinding.instance
-      .addPostFrameCallback((timeStamp) => viewModel.runStartupLogic());
+  // @override
+  // void onViewModelReady(StartupViewModel viewModel) => SchedulerBinding.instance
+  //     .addPostFrameCallback((timeStamp) => viewModel.runStartupLogic());
 }
