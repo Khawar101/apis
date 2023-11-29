@@ -4,6 +4,7 @@ class CustomTextButton extends StatelessWidget {
   String? text;
   double? height;
   double? width;
+  Color? textColor;
   final Function? onPress;
   Color? buttonColor = Colors.lightGreen;
   CustomTextButton(
@@ -12,7 +13,8 @@ class CustomTextButton extends StatelessWidget {
       required this.buttonColor,
       required this.text,
       super.key,
-      this.onPress});
+      this.onPress,
+      this.textColor});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +34,9 @@ class CustomTextButton extends StatelessWidget {
         child: Center(
             child: Text(
           text ?? "",
-          style: const TextStyle(
+          style:  TextStyle(
             fontSize: 15,
-            color: Colors.white,
+            color:textColor?? Colors.white,
           ),
         )),
       ),
