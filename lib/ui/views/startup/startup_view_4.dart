@@ -18,62 +18,36 @@ class StartupView4 extends ViewModelWidget<StartupViewModel> {
     StartupViewModel viewModel,
   ) {
     return Scaffold(
+      backgroundColor: Colors.deepOrangeAccent,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            verticalSpace(20),
-            Image.asset("assets/icons/logo.png", width: 35),
-            verticalSpace(20),
-            Center(
-              child: SvgPicture.asset(
-                "assets/icons/A1-Main.svg",
-                height: 250,
+            verticalSpace(100),
+            Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16)
               ),
-            ),
-            verticalSpace(20),
-            const Text(
-              "Find Your Favorite Food",
-              style: TextStyle(fontSize: 16, color: Colors.black),
-            ),
-            verticalSpace(20),
-            const Text(
-              "Lorem ipsum dolai sit amer.conset tetuer\n smple mistadishbbeh efd, sed",
-              style: TextStyle(fontSize: 16, color: Colors.black38),
-              textAlign: TextAlign.center,
-            ),
-            verticalSpace(40),
+             
+              child: Image.asset("assets/icons/logo.png", width: 35)),
+            verticalSpace(200),
+           
+            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.red,
-                        radius: 5,
-                      ),
-                      horizontalSpaceTiny,
-                      CircleAvatar(
-                        backgroundColor: Colors.black12,
-                        radius: 5,
-                      ),
-                      horizontalSpaceTiny,
-                      CircleAvatar(
-                        backgroundColor: Colors.black12,
-                        radius: 5,
-                      ),
-                    ],
-                  ),
+            child:
+                  
                   CustomTextButton(
-                    buttonColor: Colors.red,
-                    text: "Next",
-                    width: 100,
-                    onPress: viewModel.next,
+                    buttonColor: Colors.white,
+                    text: "Signup",
+                    // width: 100,
+                    onPress: viewModel.moveToSignup,
+                    textColor: Colors.deepOrange,
                   )
-                ],
-              ),
+               
             )
           ],
         ),

@@ -20,7 +20,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
   ) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-        backgroundColor: Colors.white70,
+      backgroundColor: const Color(0xfff8f8fa),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -29,7 +29,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Enter Your Signup Detail",
                     style: TextStyle(fontSize: 16, color: Colors.black),
                   ),

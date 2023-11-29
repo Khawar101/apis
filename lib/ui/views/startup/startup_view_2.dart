@@ -27,7 +27,7 @@ class StartupView2 extends ViewModelWidget<StartupViewModel> {
             verticalSpace(20),
             Center(
               child: SvgPicture.asset(
-                "assets/icons/A1-Main.svg",
+                "assets/icons/A2-Main.svg",
                 height: 250,
               ),
             ),
@@ -51,12 +51,12 @@ class StartupView2 extends ViewModelWidget<StartupViewModel> {
                   const Row(
                     children: [
                       CircleAvatar(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Colors.black12,
                         radius: 5,
                       ),
                       horizontalSpaceTiny,
                       CircleAvatar(
-                        backgroundColor: Colors.black12,
+                        backgroundColor: Colors.red,
                         radius: 5,
                       ),
                       horizontalSpaceTiny,

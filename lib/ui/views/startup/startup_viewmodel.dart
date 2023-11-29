@@ -52,4 +52,8 @@ class StartupViewModel extends BaseViewModel {
       notifyListeners();
     }
   }
+
+   moveToSignup(){
+    _navigationService.navigateToSignUpView();
+   }
 }

@@ -1,5 +1,6 @@
 import 'package:apis/app/app.locator.dart';
 import 'package:apis/app/app.router.dart';
+import 'package:apis/services/models/new_task.dart';
 import 'package:apis/services/new_task_service.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -27,7 +28,13 @@ class LogInViewModel extends BaseViewModel {
   // moveToHoeScreen() {
   //   _navigationService.navigateToHomeView();
   // }
+
+  NewTask? newTaskData;
   showDataInList(context) {
     _newTaskService.showDataInList(context);
   }
+
+
+
+
 }
