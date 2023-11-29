@@ -1,3 +1,7 @@
+import 'package:apis/ui/views/startup/startup_view_1.dart';
+import 'package:apis/ui/views/startup/startup_view_2.dart';
+import 'package:apis/ui/views/startup/startup_view_3.dart';
+import 'package:apis/ui/views/startup/startup_view_4.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:apis/app/app.locator.dart';
@@ -35,12 +39,15 @@ class StartupViewModel extends BaseViewModel {
     "F",
     "G",
   ];
-
-  final List<Widget> items = [
-    // const SplashContainer1(),
-    // const SplashContainer2(),
-    // const SplashContainer3(),
-    // const SplashContainer4(),
-    // const SplashContainer5(),
+  var pageInde = 0;
+  final List<Widget> pages = [
+    const StartupView1(),
+    const StartupView2(),
+    const StartupView3(),
+    const StartupView4(),
   ];
+  next() {
+    pageInde++;
+    notifyListeners();
+  }
 }
