@@ -45,7 +45,3 @@ class PostApiView extends StackedView<PostApiViewModel> {
   ) =>
       PostApiViewModel();
 }
-
-
-
-

@@ -13,6 +13,7 @@ import 'package:stacked_shared/stacked_shared.dart';
 
 import '../services/album_data_service.dart';
 import '../services/list_view_service.dart';
+import '../services/new_task_service.dart';
 import '../services/update_api_service.dart';
 
 final locator = StackedLocator.instance;
@@ -32,4 +33,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => AlbumDataService());
   locator.registerLazySingleton(() => ListViewService());
   locator.registerLazySingleton(() => UpdateApiService());
+  locator.registerLazySingleton(() => NewTaskService());
 }

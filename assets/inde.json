@@ -1,0 +1,142 @@
+{
+    "info": {
+        "_postman_id": "6ab852a3-44cb-4674-9eca-458558f25ac8",
+        "name": "Food-APIs",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "9065079",
+        "_collection_link": "https://cloudy-water-491745.postman.co/workspace/Codexia-APIs~cb61beca-8ce7-480e-b397-9dbd574be7c9/collection/23926427-6ab852a3-44cb-4674-9eca-458558f25ac8?action=share&source=collection_link&creator=9065079"
+    },
+    "item": [
+        {
+            "name": "App",
+            "item": [
+                {
+                    "name": "Auth",
+                    "item": [
+                        {
+                            "name": "User Registrartion",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "Backend Dev 2",
+                                            "description": "Required|max:80|min:4",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "backenddev2@test.com",
+                                            "description": "Required|Unique",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "phone",
+                                            "value": "6012345678",
+                                            "description": "Required",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "123456",
+                                            "description": "Required|Matches Confirm Password",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "confirm_password",
+                                            "value": "123456",
+                                            "description": "Required",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "photo",
+                                            "description": "Required| Only Image | JPEG,JPG,PNG | SIZE MAX : 2mb",
+                                            "type": "file",
+                                            "src": "/C:/Users/user/Downloads/dummy-member-removebg-preview.png"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/app/register-user",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "app",
+                                        "register-user"
+                                    ]
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Get HomePage Data",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/app/get-homepage-data",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "app",
+                        "get-homepage-data"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "https://codexia.xyz/food/public",
+            "type": "string"
+        },
+        {
+            "key": "token",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTY3M2M1ZWQ5MjIzYjVlOWM3N2JkMjZjOTJmOTg2YzBmYTE5NWMxYzY3ZmYyMDRhYTA1OGRlMDdhZGEyY2VkNTM1NGI2ZWYwYWM2ZjRjOTciLCJpYXQiOjE2NzY1MjU0MTMuODc0NTIsIm5iZiI6MTY3NjUyNTQxMy44NzQ1MjUsImV4cCI6MTcwODA2MTQxMy43MjU3MTcsInN1YiI6IjMiLCJzY29wZXMiOltdfQ.jxe6aKKEsI8CJrZA33_-qaiONgFd3NbCJ5H4OD64NxxJr_L_8JGKjgRnk3YF9WWvK7VyAmDKts97A7lJVLjLU4UOKFZixr0aKXemhjIS_nC1Xmf2D5XgJSh5zbKikhOrY3bzw6GHqaYKy05W_7Z8FUiIc90Xms7-TY2UeTHdzpoKHFm62_Kd46WUlsDM5L6SL_OFvruxc4JkVZDRk6-rr7-W9r4976Bn3M-ph62Kxi1Fe8hDbhIWTnJletBtvt4qwZjkB5KKF81-rXbk3YjHcsOZxPX7ORzqJRb7giqGVNj229zf3oAzzENbUzgaFOfhkLBKs8k82gSvHs8jTWnfmGMYKXzEkkRrZuNVX2xjmJ-1OQKlC8AJKdhc-RNbZJQ2zzALY4ekHd_4U3x2K_fhZSslUsNDGtx9yrZNZ9Dpie0A41Cd8gHvbavffSXpKge8o72kTwz1UmsioRxCejiKscun7G_AMbdVUDPZ6jo3fGn1MquHkwD8co92A_rcwEMzcJWwofwRmHfPkkt55ctcEs7PcsSjD1VGOtaHSf8ji0j9I4j7KzqAR1inCd8ODpHGqosZU9_E-F2lODPF8uiHFp4iw8b--0FSSUMv4I4QtnDncvxCjtOPyxuPv1IAVDKHV62SsO7z0T1QecEi_z4T3W9V5LfXfUKUw5WdF8JJqC8",
+            "type": "string"
+        }
+    ]
+}

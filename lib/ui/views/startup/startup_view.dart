@@ -18,8 +18,9 @@ class StartupView extends StackedView<StartupViewModel> {
     StartupViewModel viewModel,
     Widget? child,
   ) {
-    return Container(child: 
-    viewModel.pages[viewModel.pageInde],);
+    return Container(
+      child: viewModel.pages[viewModel.pageInde],
+    );
   }
 
   @override

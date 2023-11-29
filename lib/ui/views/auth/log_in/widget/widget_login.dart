@@ -37,14 +37,14 @@ class LogInWidget extends ViewModelWidget<LogInViewModel> {
           // controller: viewModel.passwordCtrl,
           // isObscureText: viewModel.visibleCheck,
           suffix: GestureDetector(
-            // onTap: viewModel.visiblecheck,
-            // child: Icon(
+              // onTap: viewModel.visiblecheck,
+              // child: Icon(
               // viewModel.visibleCheck == true
-                  // ? Icons.visibility_off_outlined
-                  // : Icons.visibility_outlined,
+              // ? Icons.visibility_off_outlined
+              // : Icons.visibility_outlined,
               // color: Colors.blueGrey,
-            // ),
-          ),
+              // ),
+              ),
         ),
       ),
 

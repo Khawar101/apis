@@ -18,30 +18,32 @@ class UpdateDataView extends StackedView<UpdateDataViewModel> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-          child: Column(
-            children: [
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Hello Ahmad",style: TextStyle(fontSize: 16,color: Colors.red,fontWeight: FontWeight.w600),),
-                  const CircleAvatar(
-                    backgroundColor: Colors.red,
-                    radius: 18,
-                  ),
-                  verticalSpaceSmall,
-                  CustomTextFormField(
-                    width: 400,
-                  hintText: "search for dishes or resturent",
-                  )
-
-                ],
-              ),
-
-            ],
-          )
-        ),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Hello Ahmad",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.red,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    const CircleAvatar(
+                      backgroundColor: Colors.red,
+                      radius: 18,
+                    ),
+                    verticalSpaceSmall,
+                    CustomTextFormField(
+                      width: 400,
+                      hintText: "search for dishes or resturent",
+                    )
+                  ],
+                ),
+              ],
+            )),
       ),
     );
   }
@@ -59,20 +61,6 @@ class UpdateDataView extends StackedView<UpdateDataViewModel> {
     super.onViewModelReady(viewModel);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  viewModel.isBusy
 //               ? const Center(

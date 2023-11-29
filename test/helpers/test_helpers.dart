@@ -5,6 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:apis/services/album_data_service.dart';
 import 'package:apis/services/list_view_service.dart';
 import 'package:apis/services/update_api_service.dart';
+import 'package:apis/services/new_task_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -16,6 +17,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<AlbumDataService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<ListViewService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<UpdateApiService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<NewTaskService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -25,6 +27,7 @@ void registerServices() {
   getAndRegisterAlbumDataService();
   getAndRegisterListViewService();
   getAndRegisterUpdateApiService();
+  getAndRegisterNewTaskService();
 // @stacked-mock-register
 }
 
@@ -96,6 +99,13 @@ MockUpdateApiService getAndRegisterUpdateApiService() {
   _removeRegistrationIfExists<UpdateApiService>();
   final service = MockUpdateApiService();
   locator.registerSingleton<UpdateApiService>(service);
+  return service;
+}
+
+MockNewTaskService getAndRegisterNewTaskService() {
+  _removeRegistrationIfExists<NewTaskService>();
+  final service = MockNewTaskService();
+  locator.registerSingleton<NewTaskService>(service);
   return service;
 }
 // @stacked-mock-create
