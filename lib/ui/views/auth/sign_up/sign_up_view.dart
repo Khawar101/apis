@@ -1,6 +1,5 @@
 import 'package:apis/ui/common/app_colors.dart';
 import 'package:apis/ui/common/ui_helpers.dart';
-import 'package:apis/ui/views/auth/sign_up/widget/button.dart';
 import 'package:apis/ui/views/auth/sign_up/widget/textfield.dart';
 import 'package:apis/ui/views/widgets/button.dart';
 import 'package:apis/ui/views/widgets/custom_text_field.dart';

@@ -21,24 +21,24 @@ class StartupViewModel extends BaseViewModel {
   //   _navigationService.replaceWithHomeView();
   // }
 
-  final List<Color> colors = [
-    Colors.red,
-    Colors.orange,
-    Colors.yellow,
-    Colors.green,
-    Colors.blue,
-    Colors.indigo,
-    Colors.purple,
-  ];
-  final List<String> letters = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-  ];
+  // final List<Color> colors = [
+  //   Colors.red,
+  //   Colors.orange,
+  //   Colors.yellow,
+  //   Colors.green,
+  //   Colors.blue,
+  //   Colors.indigo,
+  //   Colors.purple,
+  // ];
+  // final List<String> letters = [
+  //   "A",
+  //   "B",
+  //   "C",
+  //   "D",
+  //   "E",
+  //   "F",
+  //   "G",
+  // ];
   var pageInde = 0;
   final List<Widget> pages = [
     const StartupView1(),

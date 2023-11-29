@@ -25,7 +25,7 @@ class LogInWidget extends ViewModelWidget<LogInViewModel> {
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
         child: CustomTextFormField(
           hintText: "Username",
-          controller: viewModel.emailCtrl,
+          // controller: viewModel.emailCtrl,
         ),
       ),
 
@@ -34,16 +34,16 @@ class LogInWidget extends ViewModelWidget<LogInViewModel> {
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
         child: CustomTextFormField(
           hintText: "Password",
-          controller: viewModel.passwordCtrl,
-          isObscureText: viewModel.visibleCheck,
+          // controller: viewModel.passwordCtrl,
+          // isObscureText: viewModel.visibleCheck,
           suffix: GestureDetector(
-            onTap: viewModel.visiblecheck,
-            child: Icon(
-              viewModel.visibleCheck == true
-                  ? Icons.visibility_off_outlined
-                  : Icons.visibility_outlined,
-              color: Colors.blueGrey,
-            ),
+            // onTap: viewModel.visiblecheck,
+            // child: Icon(
+              // viewModel.visibleCheck == true
+                  // ? Icons.visibility_off_outlined
+                  // : Icons.visibility_outlined,
+              // color: Colors.blueGrey,
+            // ),
           ),
         ),
       ),
