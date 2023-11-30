@@ -38,7 +38,7 @@ class LogInBottom extends ViewModelWidget<SignUpViewModel> {
           horizontalSpaceTiny,
           InkWell(
             onTap: () {
-              viewModel.moveToLogIn();
+              // viewModel.moveToLogIn();
             },
             child: const Text(
               "LogIn",

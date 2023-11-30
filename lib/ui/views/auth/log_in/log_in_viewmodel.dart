@@ -1,10 +1,8 @@
+import 'dart:developer';
 import 'package:apis/app/app.locator.dart';
-import 'package:apis/app/app.router.dart';
-import 'package:apis/services/models/new_task.dart';
+import 'package:apis/services/models/hotel_data.dart';
 import 'package:apis/services/new_task_service.dart';
-import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked_services/stacked_services.dart';
 
 class LogInViewModel extends BaseViewModel {
   final _newTaskService = locator<NewTaskService>();
@@ -28,13 +26,18 @@ class LogInViewModel extends BaseViewModel {
   // moveToHoeScreen() {
   //   _navigationService.navigateToHomeView();
   // }
+  String? get userName => _newTaskService.authdata!.user!.name;
+  String? get userImage => _newTaskService.authdata!.user!.photo;
 
-  NewTask? newTaskData;
-  showDataInList(context) {
-    _newTaskService.showDataInList(context);
+  List<HotelData>? hotelData;
+
+  hotelDataGet() async {
+    setBusy(true);
+    try {
+      hotelData = await _newTaskService.hotelDataGet();
+    } catch (e) {
+      log(e.toString());
+    }
+    setBusy(false);
   }
-
-
-
-
 }

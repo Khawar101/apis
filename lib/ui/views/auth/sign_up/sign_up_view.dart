@@ -20,7 +20,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
   ) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: const Color(0xfff8f8fa),
+        backgroundColor: const Color(0xfff8f8fa),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -41,33 +41,54 @@ class SignUpView extends StackedView<SignUpViewModel> {
                   ),
                   verticalSpaceSmall,
                   Center(
-                    child: SvgPicture.asset(
-                      "assets/icons/profile-placeholder.svg",
-                      height: 52,
+                    child: GestureDetector(
+                      onTap: () {
+                        viewModel.imagePick();
+                      },
+                      child: SvgPicture.asset(
+                        "assets/icons/profile-placeholder.svg",
+                        height: 52,
+                      ),
                     ),
                   ),
                   verticalSpaceSmall,
                   CustomTextFormField(
+                    controller: viewModel.userNameCtrl,
                     hintText: "Enter your name",
                   ),
                   verticalSpaceSmall,
                   CustomTextFormField(
+                    controller: viewModel.signUpEmailCtrl,
                     hintText: "Email Address",
                   ),
                   verticalSpaceSmall,
                   CustomTextFormField(
+                    controller: viewModel.phoneCtrl,
                     hintText: "phone No",
                   ),
                   verticalSpaceSmall,
                   CustomTextFormField(
+                    controller: viewModel.signUpPasswordCtrl,
                     hintText: "password",
                   ),
                   verticalSpaceSmall,
                   CustomTextFormField(
+                    controller: viewModel.confirmpasswordCtrl,
                     hintText: "Enter confirm password",
                   ),
                   verticalSpaceMedium,
-                  CustomTextButton(buttonColor: Colors.red, text: "Signup")
+                  CustomTextButton(
+                      buttonColor: Colors.red,
+                      text: "Signup",
+                      onPress: () {
+                        viewModel.authenticationApi(
+                          viewModel.signUpEmailCtrl.text,
+                          viewModel.signUpPasswordCtrl.text,
+                          viewModel.userNameCtrl.text,
+                          viewModel.phoneCtrl.text.toString(),
+                          viewModel.confirmpasswordCtrl.text,
+                        );
+                      })
                 ],
               ),
             ),
